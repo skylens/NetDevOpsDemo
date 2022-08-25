@@ -274,19 +274,6 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-# ==> Elisp
-# Compiled
-*.elc
-
-# Packaging
-.cask
-
-# Backup files
-*~
-
-# Undo-tree save-files
-*.~undo-tree
-
 # ==> Gitbook
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
