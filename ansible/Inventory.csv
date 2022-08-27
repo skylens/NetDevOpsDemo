@@ -1,4 +1,2 @@
-1,1
-1,1
-2,3
-12,232
+Host,Group,ansible_host,ansible_ssh_user,ansible_connection
+1.14.108.65,linux,1.14.108.65,root,ssh

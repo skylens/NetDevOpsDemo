@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# https://www.modb.pro/db/395921
 
 import json
 import argparse
+import sys
 
 def get_empty_vars():
     return json.dumps({})
 
 def get_host_vars(host: str) -> dict:
-    if host == 'test1':
-        return {'ansible_host': '10.0.24.12', 'ansible_port': 2222}
-    elif host == 'test2':
-        return {'ansible_host': '10.0.24.13'}
+    if host == 'lighthouse':
+        data = {"ansible_host": "1.14.108.65", "ansible_user": "root", "ansible_port": 22}
+        return json.dumps(data)
+    elif host == 'freebsd':
+        data = {"ansible_host": "144.34.225.231", "ansible_user": "skylens116", "ansible_port": 22}
+        return json.dumps(data)
 
 def get_list() -> str:
     data = {
@@ -24,8 +28,8 @@ def get_list() -> str:
             ]
         },
     }
-    group_name = 'test'
-    test_group_hosts = ['test1', 'test2']
+    group_name = 'linux'
+    test_group_hosts = ['lighthouse', 'freebsd']
     # 加入all组
     data.get('all').get('children').append(group_name)
     data[group_name] = {}
@@ -50,7 +54,7 @@ if __name__ == '__main__':
     try:
         args = arg_parser.parse_args()
         if args.host:
-            print(get_empty_vars())
+            print(get_host_vars(sys.argv[2]))
         elif args.list:
             print(get_list())
         else:
