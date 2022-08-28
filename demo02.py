@@ -16,10 +16,10 @@ def group():
 
 def host(ip):
     info_dict = {
-    "192.168.0.112": {"ansible_ssh_host": "192.168.0.112", "ansible_ssh_port": 22, "ansible_ssh_user": "root",
-                      "ansible_ssh_pass": "123457"},
-    "192.168.0.109": {"ansible_ssh_host": "192.168.0.109", "ansible_ssh_port": 22, "ansible_ssh_user": "root",
-                      "ansible_ssh_pass": "xxxx"}}
+        "192.168.0.112": {"ansible_ssh_host": "192.168.0.112", "ansible_ssh_port": 22, "ansible_ssh_user": "root",
+                          "ansible_ssh_pass": "123457"},
+        "192.168.0.109": {"ansible_ssh_host": "192.168.0.109", "ansible_ssh_port": 22, "ansible_ssh_user": "root",
+                          "ansible_ssh_pass": "xxxx"}}
     # 判断key是否在字典中，在的话打印出来，不在的话打印空字典。
     if ip in info_dict:
         print(json.dumps(info_dict[ip], indent=4))
